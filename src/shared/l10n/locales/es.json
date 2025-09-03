@@ -1,0 +1,106 @@
+{
+  "home": "Inicio",
+  "language": "Idioma",
+  "english": "Inglés",
+  "spanish": "Español",
+  "portuguese": "Portugués",
+  "welcome_message":
+      "Bienvenido a Sky - Tu Solución Definitiva para una Conectividad Móvil Sin Problemas en el Mundo",
+  "about_us": "Sobre Nosotros",
+  "contact_us": "Contáctenos",
+  "esim_store": "Tienda Esim",
+  "my_esims": "Mis Esims",
+  "profile": "Perfil",
+  "buy_esims": "Comprar Esims",
+  "hero_title": "Mantente conectado sin esfuerzo mientras exploras el ",
+  "hero_title_bold": "¡Mundo!",
+  "hero_subtitle":
+      "Únete a miles de viajeros satisfechos que se han mantenido conectados durante sus aventuras en el mundo.",
+  "get_started": "COMENZAR",
+  "welcome_title": "Bienvenido a Sky Esims",
+  "welcome_description":
+      "Mientras planeas tu próxima aventura en el mundo, mantenerte conectado es más importante que nunca. Ya sea que estés explorando las vibrantes calles de Kingston, relajándote en las prístinas playas de Barbados, o haciendo senderismo por las exuberantes selvas tropicales de Dominica, querrás compartir tus experiencias con amigos y familiares en casa. Ahí es donde entra Sky.",
+  "discover": "DESCUBRIR",
+  "plan_type": "TIPO DE PLAN",
+  "data_allowance": "DATOS INCLUIDOS",
+  "validity": "VALIDEZ",
+  "price": "PRECIO",
+  "country": "País",
+  "global": "Global",
+  "regional": "Regional",
+  "up_to": "HASTA",
+  "gb": "GB",
+  "days": "días",
+  "postpaid": "Postpago",
+  "unlimited": "Ilimitado",
+  "prepaid": "Prepago",
+  "usd": "USD",
+  "less_than": "Menos de",
+  "buy_esim_title": "Compra Esims desde cualquier lugar",
+  "buy_esim": "Comprar Esim",
+  "activate_abroad": "Activar en el Extranjero",
+  "download_app_title": "Descarga nuestra aplicación",
+  "download_app_subtitle":
+      "Descubre ofertas y descuentos exclusivos con nuestra experiencia móvil.",
+  "experience_title": "Gran experiencia con Sky esim",
+  "experience_description":
+      "Sky es tu solución definitiva para una conectividad móvil sin problemas en el mundo. Entendemos que navegar por un nuevo destino puede ser abrumador, especialmente cuando se trata de comunicación.",
+  "newsletter_title": "Suscríbete a nuestro boletín",
+  "newsletter_subtitle":
+      "Suscríbete a nuestro boletín para recibir actualizaciones diarias/semanales de nuestros productos y servicios.",
+  "email": "Correo electrónico",
+  "footer_description":
+      "Sky es tu socio de confianza para una conectividad global perfecta. Proporcionamos soluciones eSIM confiables para viajeros de todo el mundo, asegurando que te mantengas conectado dondequiera que te lleven tus aventuras.",
+  "sky_esim_links": "Enlaces de Sky",
+  "download_our_app": "Descarga Nuestra Aplicación",
+  "sky_esim_instagram": "Instagram de Sky",
+  "copyright": "© 2025  Diseñado por Byllkreate Tech Ltd",
+  "onboarding1_title": "Texto, Habla, Navega en Cualquier Lugar",
+  "onboarding1_description":
+      "Proporciónanos la información necesaria requerida y déjanos hacer todos los datos que necesitas!!!",
+  "onboarding2_title": "¡Activa tu eSIM, Conéctate y Disfruta!",
+  "onboarding2_description":
+      "Una vez activado, tu dispositivo se conectará automáticamente a nuestra red. Puedes gestionar la configuración de tu eSIM en cualquier momento a través de la aplicación.",
+  "onboarding3_title": "Verifica la Compatibilidad de tu Dispositivo",
+  "onboarding3_description":
+      "Asegúrate de que tu dispositivo sea compatible con eSIM. La mayoría de los modelos recientes de marcas como Apple, Google y Samsung son compatibles. Si no estás seguro, consulta el manual de usuario de tu dispositivo o visita el sitio web del fabricante.",
+  "about_title": "Sobre Sky",
+  "about_subtitle":
+      "Tu socio de confianza para una conectividad perfecta en el mundo",
+  "our_mission": "Nuestra Misión",
+  "mission_description":
+      "En Sky, estamos dedicados a proporcionar a los viajeros una conectividad móvil perfecta, confiáble y asequible en todo el mundo. Entendemos que mantenerse conectado es esencial para los viajeros modernos, ya sea para navegación, compartir experiencias o mantenerse en contacto con seres queridos.",
+  "our_values": "Nuestros Valores",
+  "reliable_connectivity": "Conectividad Confiable",
+  "reliable_connectivity_desc":
+      "Garantizamos una cobertura de red consistente y de alta calidad en todos los destinos principales del mundo.",
+  "customer_first": "El Cliente Primero",
+  "customer_first_desc":
+      "Tu satisfacción es nuestra prioridad. Proporcionamos soporte 24/7 para garantizar una experiencia fluida.",
+  "innovation": "Innovación",
+  "innovation_desc":
+      "Mejoramos continuamente nuestros servicios y tecnología para proporcionar la mejor experiencia posible.",
+  "our_team": "Nuestro Equipo",
+  "ceo_and_cto": "CEO y CTO",
+  "senior_software_engineer": "Ingeniero de Software Senior",
+  "support_manager": "Gerente de Soporte",
+  "contact_title": "Contáctenos",
+  "contact_subtitle":
+      "Ponte en contacto con nuestro equipo para cualquier pregunta o soporte",
+  "get_in_touch": "Ponte en Contacto",
+  "address": "Dirección",
+  "address_value": "123 Calle Mundial, Kingston, Jamaica",
+  "phone": "Teléfono",
+  "phone_value": "+1 (876) 123-4567",
+  "email_value": "support@matsilmobile.com",
+  "working_hours": "Horario de Atención",
+  "working_hours_value": "Lunes - Viernes: 9:00 AM - 6:00 PM",
+  "send_message": "Enviar Mensaje",
+  "name": "Nombre",
+  "your_name": "Tu nombre",
+  "your_email": "Tu correo electrónico",
+  "subject": "Asunto",
+  "message": "Mensaje",
+  "your_message": "Tu mensaje"
+
+}

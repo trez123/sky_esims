@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+    <base href="/dashboard/" />
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
+    <meta
+      name="google-signin-client_id"
+      content="1039730394663-fr39vhp0jo356c4kmruvmn6ms4og8klr.apps.googleusercontent.com"
+    />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="sky_esim" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <title>sky_esim</title>
+    <link rel="manifest" href="manifest.json" />
+
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+
+    <style id="splash-screen-style">
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100%;
+        background-size: 100% 100%;
+        background-color: #00b1c9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      svg {
+        width: 125px;
+        height: 89.5px;
+        stroke: white;
+        fill: none;
+      }
+
+      svg .svg-elem-1 {
+        stroke-dashoffset: 2.0390144661068916px;
+        stroke-dasharray: 2.0390144661068916px;
+        -webkit-transition: stroke-dashoffset 0.5s
+            cubic-bezier(0.39, 0.575, 0.565, 1) 0s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.5s;
+        transition: stroke-dashoffset 0.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+            0s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.5s;
+      }
+
+      svg.active .svg-elem-1 {
+        stroke-dashoffset: 4.078028932213783px;
+      }
+
+      svg .svg-elem-2 {
+        stroke-dashoffset: 624.2350463867188px;
+        stroke-dasharray: 624.2350463867188px;
+        fill: transparent;
+        -webkit-transition: stroke-dashoffset 0.5s
+            cubic-bezier(0.39, 0.575, 0.565, 1) 0.12s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.6s;
+        transition: stroke-dashoffset 0.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+            0.12s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.6s;
+      }
+
+      svg.active .svg-elem-2 {
+        stroke-dashoffset: 1248.4700927734375px;
+        fill: white;
+      }
+
+      svg .svg-elem-3 {
+        stroke-dashoffset: 345.3173828125px;
+        stroke-dasharray: 345.3173828125px;
+        fill: transparent;
+        -webkit-transition: stroke-dashoffset 0.5s
+            cubic-bezier(0.39, 0.575, 0.565, 1) 0.24s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.7s;
+        transition: stroke-dashoffset 0.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+            0.24s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.7s;
+      }
+
+      svg.active .svg-elem-3 {
+        stroke-dashoffset: 690.634765625px;
+        fill: white;
+      }
+
+      svg .svg-elem-4 {
+        stroke-dashoffset: 2311.220703125px;
+        stroke-dasharray: 2311.220703125px;
+        fill: transparent;
+        -webkit-transition: stroke-dashoffset 0.5s
+            cubic-bezier(0.39, 0.575, 0.565, 1) 0.36s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.8s;
+        transition: stroke-dashoffset 0.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+            0.36s,
+          fill 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.8s;
+      }
+
+      svg.active .svg-elem-4 {
+        stroke-dashoffset: 4622.44140625px;
+        fill: white;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const svg = document.getElementById("splash-svg");
+        setTimeout(() => {
+          svg.classList.add("active");
+        }, 100);
+      });
+    </script>
+  </head>
+  <body>
+    <svg
+      id="splash-svg"
+      width="125"
+      height="89.5"
+      viewBox="0 0 500 358"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_d_1196_6)">
+        <path
+          d="M141.352 100.946L141.351 100.907"
+          stroke="white"
+          class="svg-elem-1"
+        ></path>
+        <path
+          d="M300.364 193.462C322.001 142.396 381.04 118.495 432.232 140.079C462.293 152.754 482.935 178.301 490.493 207.568C479.826 191.272 464.367 177.846 445.045 169.699C393.345 147.9 333.719 172.037 311.867 223.612C303.7 242.888 301.991 263.264 305.723 282.368C290.699 256.122 287.659 223.449 300.364 193.462Z"
+          fill="white"
+          stroke="white"
+          class="svg-elem-2"
+        ></path>
+        <path
+          d="M452.669 254.633C444.666 284.547 413.875 302.343 383.894 294.378C366.751 289.824 353.6 277.829 346.967 262.801C354.081 270.558 363.421 276.451 374.362 279.358C404.875 287.464 436.215 269.354 444.361 238.905C447.282 227.987 446.809 216.97 443.611 206.949C453.368 220.173 457.245 237.528 452.669 254.633Z"
+          fill="white"
+          stroke="white"
+          class="svg-elem-3"
+        ></path>
+        <path
+          d="M412.552 340.343L412.543 340.345C408.393 341.297 404.161 341.904 399.899 342.36H399.893C397.776 342.611 395.676 342.655 393.5 342.806L387.523 343.034L363.744 343.911C350.348 344.37 336.952 344.771 323.556 345.155L323.539 345.156L323.521 345.158C323.398 345.171 323.275 345.191 323.181 345.205L322.921 345.235L321.922 345.275H321.921C277.858 347.146 233.795 348.3 189.734 348.556H189.733C173.339 348.675 156.945 348.632 140.55 348.499L133.524 348.437H133.515L125.948 348.501L122.981 348.509L119.874 348.491H119.875C117.588 348.42 115.367 348.449 113.133 348.24L113.121 348.239L111.431 348.12C109.745 347.995 108.069 347.843 106.401 347.607L106.392 347.606L106.384 347.605L105.546 347.51C103.594 347.274 101.65 346.952 99.7065 346.59H99.7036C90.824 344.994 82.1204 342.349 73.8638 338.691L73.8618 338.689L72.313 338.001C56.889 330.993 43.1843 320.424 32.2104 307.572L31.1226 306.279C19.6538 292.367 11.4926 275.71 7.66455 258.099V258.098L7.31299 256.445C5.61395 248.176 4.76956 239.736 4.93311 231.339C5.12213 222.377 6.33757 213.425 8.56006 204.741V204.74C12.978 187.361 21.6263 171.138 33.4341 157.861C39.3383 151.219 45.938 145.214 53.1733 140.119C60.4275 135.048 68.2498 130.829 76.4243 127.542C84.6148 124.294 93.166 122.005 101.834 120.759H101.837C106.164 120.113 110.53 119.813 114.894 119.653L114.893 119.652C115.802 119.64 116.723 119.642 117.644 119.644L118.094 119.645L118.142 119.197C119.724 104.609 123.658 90.3269 129.713 77.1289C137.285 60.7409 148.101 46.0221 161.3 34.1631L161.301 34.1621C174.453 22.2672 189.83 13.0291 206.309 7.43652L206.313 7.43555C220.697 2.42246 235.853 0.128973 250.747 0.548828C235.961 2.42592 221.687 6.64603 208.614 13.0088L208.611 13.0098C193.736 20.3562 180.36 30.3105 169.477 42.3701L169.476 42.3711C158.64 54.4525 150.175 68.4351 144.733 83.3809C143.256 87.3645 142.02 91.4172 140.989 95.5098L140.975 95.5625L140.974 95.6182C140.973 95.6615 140.971 95.7047 140.97 95.748L140.934 95.7441C138.14 106.922 136.959 118.431 137.318 129.841L137.621 139.472L127.332 139.797L121.386 139.985H121.372L116.011 140.315L116 140.316L115.991 140.317C112.893 140.637 109.798 141.029 106.743 141.628L105.435 141.897C98.4927 143.344 91.718 145.492 85.314 148.445L85.312 148.446C72.5417 154.396 61.1776 163.18 52.3892 174.007C48.2293 179.055 44.719 184.591 41.7983 190.383L41.2222 191.545C38.1698 197.752 35.8137 204.291 34.3335 211.026C31.348 224.449 31.3923 238.622 34.605 251.921V251.922C37.7474 265.267 44.1999 277.698 52.8843 288.241L52.8882 288.245C57.0178 293.147 61.66 297.614 66.7124 301.55L67.728 302.33C72.8397 306.206 78.4078 309.428 84.1919 312.132L85.3521 312.666C91.1849 315.299 97.3166 317.252 103.594 318.51L104.852 318.752C106.522 319.075 108.207 319.364 109.914 319.551C111.612 319.811 113.325 319.936 115.013 320.062V320.062C116.718 320.245 118.483 320.211 120.132 320.284V320.285C120.536 320.304 121.004 320.312 121.493 320.315L122.978 320.32L125.948 320.328V320.329L133.505 320.394H133.515C152.255 320.214 170.995 320.137 189.733 320.273H189.734C214.706 320.419 239.68 320.881 264.654 321.57L266.554 321.623L264.925 320.643C258.396 316.712 252.043 312.52 245.935 308.031H245.934C223.936 291.909 204.912 272.212 189.399 250.334H189.398C173.834 228.472 161.949 204.284 153.885 179.025C151.752 172.259 149.896 165.412 148.321 158.506C150.121 165.354 152.247 172.111 154.707 178.744V178.745C163.764 203.585 177.404 226.588 194.285 246.546C211.197 266.513 231.494 283.298 253.648 296.37C275.516 309.27 299.303 318.361 323.667 323.669L323.712 323.679L323.759 323.681C337.088 324.063 350.416 324.461 363.744 324.918V324.919L387.524 325.795H387.525L393.439 326.006H393.456C395.225 326.008 397.1 326.104 398.918 326.049L398.917 326.048C402.556 325.966 406.223 325.768 409.861 325.248L409.862 325.249C424.418 323.361 438.664 318.049 451.219 309.757L451.223 309.754C463.674 301.348 474.451 290.075 482.273 276.747L482.274 276.748C489.103 265.135 493.57 251.993 495.483 238.27C496.03 268.019 482.139 298.751 457.712 318.442L457.709 318.444C444.795 329.023 429.253 336.816 412.552 340.343Z"
+          fill="white"
+          stroke="white"
+          class="svg-elem-4"
+        ></path>
+      </g>
+      <defs>
+        <filter
+          id="filter0_d_1196_6"
+          x="0.413574"
+          y="0"
+          width="499.586"
+          height="357.125"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          ></feColorMatrix>
+          <feOffset dy="4"></feOffset>
+          <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+          <feComposite in2="hardAlpha" operator="out"></feComposite>
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+          ></feColorMatrix>
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_1196_6"
+          ></feBlend>
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_1196_6"
+            result="shape"
+          ></feBlend>
+        </filter>
+      </defs>
+    </svg>
+
+    <script src="flutter_bootstrap.js" async=""></script>
+  </body>
+</html>
