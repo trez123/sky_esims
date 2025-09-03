@@ -4,7 +4,7 @@ import pt from "./locales/pt.json";
 
 type TranslationKeys = "en" | "es" | "pt";
 
-type TranslationStrings = {
+export type TranslationStrings = {
   home: string;
   language: string;
   english: string;
@@ -98,6 +98,14 @@ const translations: Record<TranslationKeys, TranslationStrings> = {
   en,
   es,
   pt,
+};
+
+export const supportedLanguages = ["en", "es", "pt"];
+
+export const supportedLanguageNames: Record<string, string> = {
+  en: "English",
+  es: "Español",
+  pt: "Português",
 };
 
 export function getTranslations(locale: string): TranslationStrings {

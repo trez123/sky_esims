@@ -56,6 +56,21 @@
         align-items: center;
       }
 
+      @keyframes scaleInOut {
+        0%,
+        100% {
+          transform: scale(0.9);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+
+      #splash-svg {
+        animation: scaleInOut 5s ease-in-out infinite;
+        transform-origin: center;
+      }
+
       svg {
         width: 125px;
         height: 89.5px;

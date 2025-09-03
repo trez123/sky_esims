@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { TranslationStrings } from '../l10n/translations';
 
 interface FooterProps {
-  t: Record<string, string>; // translations object, e.g. from getTranslations(lang)
+  t: TranslationStrings; // translations object, e.g. from getTranslations(lang)
 }
 
 const FOOTER_SOCIAL_ICONS = [
@@ -20,15 +21,15 @@ const Footer = ({ t }: FooterProps) => {
         <div className="flex-1 flex flex-col gap-6 min-w-[220px]">
           <div>
             <Image
-              src="/assets/assets/images/logo-white.svg"
+              src="dashboard/assets/assets/images/esim-logo-white.svg"
               alt="Logo"
-              width={200}
+              width={100}
               height={60}
-              className="w-[200px]"
+              className="w-[100px]"
               priority
             />
           </div>
-          <p className="text-gray-300 text-sm max-w-xs">{t.footerDescription}</p>
+          <p className="text-gray-300 text-sm max-w-xs">{t.footer_description}</p>
           <div className="flex gap-4 mt-2">
             {FOOTER_SOCIAL_ICONS.map(({ href, iconClass, label }) => (
               <a
@@ -47,21 +48,21 @@ const Footer = ({ t }: FooterProps) => {
 
         {/* Column 2: Links */}
         <div className="flex-1 flex flex-col gap-4 min-w-[180px]">
-          <h3 className="text-xl mb-2">{t.caribbeanEsimLinks}</h3>
+          <h3 className="text-xl mb-2">{t.sky_esim_links}</h3>
           <Link href="/" className='hover:text-gray-400 text-sm'>
             {t.home}
           </Link>
           <Link href="/about" className='hover:text-gray-400 text-sm'>
-            {t.aboutUs}
+            {t.about_us}
           </Link>
           <Link href="/contact-us" className='hover:text-gray-400 text-sm'>
-            {t.contactUs}
+            {t.contact_us}
           </Link>
           <Link href="/esim_store" className='hover:text-gray-400 text-sm'>
-            {t.esimStore}
+            {t.esim_store}
           </Link>
           <Link href="/my_esims" className='hover:text-gray-400 text-sm'>
-            {t.myEsims}
+            {t.my_esims}
           </Link>
           <Link href="/profile" className='hover:text-gray-400 text-sm'>
             {t.profile}
@@ -70,19 +71,19 @@ const Footer = ({ t }: FooterProps) => {
 
         {/* Column 3: Contact */}
         <div className="flex-1 flex flex-col gap-4 min-w-[180px]">
-          <h3 className="text-xl mb-2">{t.contactUs}</h3>
+          <h3 className="text-xl mb-2">{t.contact_us}</h3>
           {/* Uncomment and add actual contact info if desired */}
           {/* <p className="text-sm">(+876) 8329390</p> */}
           {/* <p className="text-sm">silas@byllkreate.com</p> */}
           {/* <p className="text-sm">1000 Old Hope Road, Kingston 10</p> */}
           <a href="#" className="hover:text-gray-400 text-sm mt-2">
-            {t.downloadOurApp}
+            {t.download_our_app}
           </a>
         </div>
 
         {/* Column 4: Instagram grid */}
         <div className="flex-1 flex flex-col gap-4 min-w-[220px]">
-          <h3 className="text-xl mb-2">{t.caribbeanEsimInstagram}</h3>
+          <h3 className="text-xl mb-2">{t.sky_esim_instagram}</h3>
           <div className="grid grid-cols-4 grid-rows-2 gap-2">
             {[...Array(8)].map((_, i) => (
               <div

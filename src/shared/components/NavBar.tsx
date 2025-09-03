@@ -6,23 +6,27 @@ import Image from 'next/image';
 import RouteGradients from '../utils/route-gradients';
 import LanguageSelector from './LanguageSelector';
 import { usePathname } from 'next/navigation';
+import { supportedLanguages } from '../l10n/translations';
 
 interface NavbarProps {
   t: Record<string, string>; // your translations
 }
 const navLinks = [
   { href: '/', labelKey: 'home' },
-  { href: '/about', labelKey: 'aboutUs' },
-  { href: '/contact-us', labelKey: 'contactUs' },
-  { href: '/esim_store', labelKey: 'esimStore' },
-  { href: '/my_esims', labelKey: 'myEsims' },
-  { href: '/profile', labelKey: 'profile' },
+  { href: '/about', labelKey: 'about_us' },
+  { href: '/contact', labelKey: 'contact_us' },
+  // { href: '/esim_store', labelKey: 'esim_store' },
+  // { href: '/my_esims', labelKey: 'my_esims' },
+  // { href: '/profile', labelKey: 'profile' },
 ];
 
 function Navbar({ t }: NavbarProps) {
-    const pathname = usePathname(); // gets current route path
-  const currentRoute = pathname ?? '/';
+  const pathname = usePathname(); // gets current route path
+  const currentRoute = pathname?.endsWith('/') && pathname !== '/' 
+  ? pathname.slice(0, -1) 
+  : pathname ?? '/';
   const [menuOpen, setMenuOpen] = useState(false);
+const currentLocale = pathname?.split('/')[1] ?? 'en';
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -33,15 +37,15 @@ function Navbar({ t }: NavbarProps) {
     const isActive = currentRoute === href;
 
     const baseClasses =
-      'cursor-pointer transition-all duration-300 text-[15px] w-[165px] text-center';
+      'cursor-pointer transition-all duration-300 text-[15px] w-[165px] text-center ';
     const activeClasses = isActive
-      ? `bg-gradient-to-r ${RouteGradients.getGradientForRoute(currentRoute)} text-transparent bg-clip-text`
+      ? `bg-gradient-to-r from-[#008799] to-[#00E0FF] text-transparent bg-clip-text`
       : 'text-gray-700';
 
     return (
-      <Link key={href} href={href} passHref className={`${baseClasses} ${activeClasses}`}>
+      <a key={href} href={href} className={`${baseClasses} ${activeClasses}`}>
         {linkText}
-      </Link>
+      </a>
     );
   };
 
@@ -54,14 +58,21 @@ function Navbar({ t }: NavbarProps) {
       : 'text-gray-700';
 
     return (
-      <Link key={href} href={href} passHref className={`${baseClasses} ${activeClasses}`}>
+      <a key={href} href={href} className={`${baseClasses} ${activeClasses}`}>
         {linkText}
-      </Link>
+      </a>
     );
   };
 
-  // Conditional class for fixed navbar on some routes
-  const fixedNavbarRoutes = ['/', '/about', '/contact-us'];
+  function getLanguagePath(path?: string): string[] {
+    if (path && path.startsWith('/')) path = path;
+  else if (path) path = '/' + path; 
+  else path = '';
+  return supportedLanguages.map(lang => `/${lang}${path}`);
+  }
+  const fixedNavbarRoutes = [...getLanguagePath() , ...getLanguagePath('/about'), ...getLanguagePath('/contact')];
+  console.log('Fixed Navbar Routes:', fixedNavbarRoutes);
+  console.log('Current Route:', currentRoute);
   const navbarClasses = [
     'flex items-center justify-between bg-white h-[100px] px-4 md:px-8 shadow-xl/4',
     fixedNavbarRoutes.includes(currentRoute) ? 'fixed top-0 left-0 right-0 z-50' : '',
@@ -71,11 +82,11 @@ function Navbar({ t }: NavbarProps) {
     <nav className={navbarClasses}>
       <div className="flex items-center gap-2">
         <Image
-          src="/assets/assets/images/Esim-Logo.svg"
+          src="/dashboard/assets/assets/images/Esim-Logo.svg"
           alt="Esim Logo"
-          width={90}
-          height={90}
-          className="w-[80px] md:w-[90px] ml-1 mr-1.5 flex-shrink-0"
+          width={60}
+          height={60}
+          className="w-[60px] md:w-[70px] ml-1 mr-1.5 flex-shrink-0"
           priority
         />
         <LanguageSelector />
@@ -83,18 +94,20 @@ function Navbar({ t }: NavbarProps) {
 
       {/* Desktop nav */}
       <div className="hidden md:flex items-center justify-between bg-white px-8 py-6 font-poppins font-bold">
-        {navLinks.map(({ href, labelKey }) => buildNavLink(href, t[labelKey]))}
+       {navLinks.map(({ href, labelKey }) => {
+  // Handle root path separately to avoid double slashes
+  const localizedHref = href === '/' ? `/${currentLocale}` : `/${currentLocale}${href}`;
+  return buildNavLink(localizedHref, t[labelKey]);
+})}
       </div>
 
       {/* Desktop Buy Esims Button */}
       <div className="hidden md:flex items-center gap-4">
-        <Link href="/esim_store" passHref>
-          <div className="bg-gradient-to-t from-[#763BB7FF] to-[#E76BA0FF] text-white px-4 md:px-6 py-2.5 md:py-3.5 rounded-xl cursor-pointer hover:opacity-90 transition-all duration-300 text-sm md:text-base">
+        <a href={`${currentLocale}/dashboard`} className="bg-gradient-to-t from-[#763BB7FF] to-[#E76BA0FF] text-white px-4 md:px-6 py-2.5 md:py-3.5 rounded-xl cursor-pointer hover:opacity-90 transition-all duration-300 text-sm md:text-base">
             <p className="text-white font-poppins font-[700] text-[15px] cursor-pointer">
-              {t.buyEsims}
+              {t.buy_esims}
             </p>
-          </div>
-        </Link>
+        </a>
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -132,7 +145,7 @@ function Navbar({ t }: NavbarProps) {
           <div className="flex flex-col items-center pt-[150px] h-full gap-8">
             {navLinks.map(({ href, labelKey }) => buildMobileNavLink(href, t[labelKey]))}
             <LanguageSelector />
-            <Link href="/esim_store" passHref>
+            <Link href={`${currentLocale}/dashboard`} passHref>
               <div className="bg-gradient-to-t from-[#763BB7FF] to-[#E76BA0FF] text-white px-4 md:px-6 py-2.5 md:py-3.5 rounded-xl cursor-pointer hover:opacity-90 transition-all duration-300 text-sm md:text-base">
                 <h2 className="text-white font-poppins font-bold cursor-pointer">{t.buyEsims}</h2>
               </div>
