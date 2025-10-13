@@ -3,12 +3,10 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import LanguageSync from "../shared/components/LanguageSync";
 
-const poppins  = Poppins(
-  {
-    variable: "--font-poppins",
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
-  }
-);
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,16 +27,14 @@ export default function RootLayout({
           as="script"
           type="application/javascript"
         />
-         <link
+        <link
           rel="preload"
           href="/dashboard/main.dart.js"
           as="script"
           type="application/javascript"
         />
       </head>
-      <body
-        className={` ${poppins.variable} antialiased`}
-      >
+      <body className={` ${poppins.variable} antialiased`}>
         <LanguageSync />
         {children}
       </body>
