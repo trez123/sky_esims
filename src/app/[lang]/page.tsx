@@ -1,4 +1,7 @@
-import { getTranslations, TranslationStrings } from "@/shared/l10n/translations";
+import {
+  getTranslations,
+  TranslationStrings,
+} from "@/shared/l10n/translations";
 import Image from "next/image";
 import LanguageToggle from "../../shared/components/LanguageSelector";
 import Navbar from "@/shared/components/NavBar";
@@ -8,27 +11,27 @@ import { JSX } from "react";
 type Props = {
   params: Promise<{ lang: string }>;
 };
-const buildHeroSection = (t: TranslationStrings) =>{
-    return (
-      <div className="relative font-poppins mt-[100px]">
-        <div className="bg-gradient-to-r from-[#008799] to-[#00E0FF]">
-          <div className="container mx-auto px-8 pt-24 pb-48">
-            <div className="flex flex-col md:flex-row items-start gap-8">
-              <div className="flex-1 text-white">
-                <h1 className="text-4xl md:text-5xl leading-15 mb-4">
-                  {t.hero_title}
-                  <span className="font-bold">{t.hero_title_bold}</span>
-                </h1>
-                <p className="text-lg mb-8 font-light max-w-xl mt-8">
+const buildHeroSection = (t: TranslationStrings) => {
+  return (
+    <div className="relative font-poppins mt-[100px]">
+      <div className="bg-gradient-to-r from-[#008799] to-[#00E0FF]">
+        <div className="container mx-auto px-8 pt-24 pb-48">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="flex-1 text-white">
+              <h1 className="text-4xl md:text-5xl leading-15 mb-4">
+                {t.hero_title}
+                <span className="font-bold">{t.hero_title_bold}</span>
+              </h1>
+              <p className="text-lg mb-8 font-light max-w-xl mt-8">
                 {t.hero_subtitle}
               </p>
               <a
-                href="/esim_store"
+                href="/dashboard"
                 className="inline-block bg-white text-[#008799] px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-all"
               >
                 {t.get_started}
               </a>
-              </div>
+            </div>
             <div className="flex-1">
               <img
                 src="/dashboard/assets/assets/images/business-on-phone.svg"
@@ -36,9 +39,9 @@ const buildHeroSection = (t: TranslationStrings) =>{
                 className="w-full"
               />
             </div>
-            </div>
           </div>
         </div>
+      </div>
       <div className="w-full overflow-hidden absolute bottom-0">
         <img
           src="/dashboard/assets/assets/images/esim-wave.svg"
@@ -46,36 +49,46 @@ const buildHeroSection = (t: TranslationStrings) =>{
           className="w-full scale-x-[1.01]"
         />
       </div>
-      </div>
-     );
-  }
+    </div>
+  );
+};
 
-  const buildWelcomeSection = (t: TranslationStrings): JSX.Element => {
-    return (
-      <div className="container mx-auto px-8 py-16 font-poppins">
-        <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="flex-1">
-            <img src='/dashboard/assets/assets/images/happy-couple.png' alt="Happy Couple" className="w-full"/>
-          </div>
-          <div className="flex-1">
-            <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#008799] to-[#00E0FF] text-transparent bg-clip-text">{t.welcome_title}</h2>
-            <div className="w-10 h-1 bg-gradient-to-r from-[#008799] to-[#00E0FF] rounded mb-6"></div>
-            <p className="text-gray-700 mb-8 leading-12">{t.welcome_description}</p>
-            <a href="/esim_store" className="inline-block bg-gradient-to-r from-[#008799] to-[#00E0FF] text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition-all">
-              {t.discover}
-            </a>
-          </div>
+const buildWelcomeSection = (t: TranslationStrings): JSX.Element => {
+  return (
+    <div className="container mx-auto px-8 py-16 font-poppins">
+      <div className="flex flex-col md:flex-row gap-8 items-start">
+        <div className="flex-1">
+          <img
+            src="/dashboard/assets/assets/images/happy-couple.png"
+            alt="Happy Couple"
+            className="w-full"
+          />
+        </div>
+        <div className="flex-1">
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#008799] to-[#00E0FF] text-transparent bg-clip-text">
+            {t.welcome_title}
+          </h2>
+          <div className="w-10 h-1 bg-gradient-to-r from-[#008799] to-[#00E0FF] rounded mb-6"></div>
+          <p className="text-gray-700 mb-8 leading-12">
+            {t.welcome_description}
+          </p>
+          <a
+            href="/dashboard"
+            className="inline-block bg-gradient-to-r from-[#008799] to-[#00E0FF] text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition-all"
+          >
+            {t.discover}
+          </a>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+};
 
-  const buildPlansSection = (t: TranslationStrings): JSX.Element => {
-    return (
+const buildPlansSection = (t: TranslationStrings): JSX.Element => {
+  return (
     <div className="relative bg-gradient-to-r from-[#763BB7] to-[#E76BA0] py-24 md:py-48 lg:py-96">
       <div className="container mx-auto px-4 md:px-8 font-poppins">
         <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-8">
-
           {/* Header - Hidden on mobile */}
           <div className="hidden md:grid grid-cols-4 gap-8 mb-8">
             <div className="text-center">
@@ -104,7 +117,6 @@ const buildHeroSection = (t: TranslationStrings) =>{
 
           {/* Plan Details */}
           <div className="grid grid-cols-1 md:grid-cols-7 gap-8 md:gap-4 mx-4 md:mx-12">
-
             {/* Plan Types */}
             <div className="space-y-4 md:space-y-8">
               {/* Mobile Title */}
@@ -112,15 +124,27 @@ const buildHeroSection = (t: TranslationStrings) =>{
                 {t.plan_type}
               </h3>
               <div className="flex items-center justify-center gap-4">
-                <img src="assets/assets/icons/flag.png" alt="Country" className="w-6 h-6" />
+                <img
+                  src="assets/assets/icons/flag.png"
+                  alt="Country"
+                  className="w-6 h-6"
+                />
                 <span className="text-gray-700">{t.country}</span>
               </div>
               <div className="flex items-center justify-center gap-4">
-                <img src="assets/assets/icons/globe-gradient.png" alt="Global" className="w-6 h-6" />
+                <img
+                  src="assets/assets/icons/globe-gradient.png"
+                  alt="Global"
+                  className="w-6 h-6"
+                />
                 <span className="text-gray-700">{t.global}</span>
               </div>
               <div className="flex items-center justify-center gap-4">
-                <img src="assets/assets/icons/buildings-gradient.png" alt="Regional" className="w-6 h-6" />
+                <img
+                  src="assets/assets/icons/buildings-gradient.png"
+                  alt="Regional"
+                  className="w-6 h-6"
+                />
                 <span className="text-gray-700">{t.regional}</span>
               </div>
             </div>
@@ -162,12 +186,17 @@ const buildHeroSection = (t: TranslationStrings) =>{
                 {t.validity}
               </h3>
               <div>
-                <span className="font-normal">{t.up_to}</span><br />
+                <span className="font-normal">{t.up_to}</span>
+                <br />
                 <span className="font-bold">{`180 ${t.days} `}</span>
                 <span className="font-normal">{t.postpaid}</span>
               </div>
               <div className="flex justify-center">
-                <img src="assets/assets/icons/arrow-gradinet.png" alt="Arrow" className="w-1.5 h-4" />
+                <img
+                  src="assets/assets/icons/arrow-gradinet.png"
+                  alt="Arrow"
+                  className="w-1.5 h-4"
+                />
               </div>
               <div>
                 <span className="font-bold">{`${t.unlimited} `}</span>
@@ -191,31 +220,42 @@ const buildHeroSection = (t: TranslationStrings) =>{
                 <span className="font-normal">{t.gb}</span>
               </div>
               <div className="flex justify-center">
-                <img src="assets/assets/icons/double-transfer.png" alt="Transfer" className="w-3 h-4" />
+                <img
+                  src="assets/assets/icons/double-transfer.png"
+                  alt="Transfer"
+                  className="w-3 h-4"
+                />
               </div>
               <div>
                 <span className="font-bold">{`${t.less_than} 3 `}</span>
                 <span className="font-normal">{t.usd}</span>
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
       <div className="w-full overflow-hidden absolute top-0">
-        <img src="/dashboard/assets/assets/images/esim-wave-1.svg" alt="Wave 1" className="w-full scale-x-[1.01]" />
+        <img
+          src="/dashboard/assets/assets/images/esim-wave-1.svg"
+          alt="Wave 1"
+          className="w-full scale-x-[1.01]"
+        />
       </div>
       <div className="w-full overflow-hidden absolute bottom-0">
-        <img src="/dashboard/assets/assets/images/esim-wave-2.svg" alt="Wave 2" className="w-full scale-x-[1.01]" />
+        <img
+          src="/dashboard/assets/assets/images/esim-wave-2.svg"
+          alt="Wave 2"
+          className="w-full scale-x-[1.01]"
+        />
       </div>
     </div>
-    );
-  }
+  );
+};
 
-  const buildExperienceSection = (t: TranslationStrings): JSX.Element => {
-    return (
-          <div className="container mx-auto px-8 py-16 font-poppins">
+const buildExperienceSection = (t: TranslationStrings): JSX.Element => {
+  return (
+    <div className="container mx-auto px-8 py-16 font-poppins">
       <div className="flex flex-col md:flex-row sm:gap-32 gap-12 items-center">
         <div className="flex-1">
           <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#763BB7] to-[#E76BA0] text-transparent bg-clip-text">
@@ -226,7 +266,7 @@ const buildHeroSection = (t: TranslationStrings) =>{
             {t.experience_description}
           </p>
           <a
-            href="/app#/esim_store"
+            href="/dashboard"
             className="inline-block bg-gradient-to-r from-[#763BB7] to-[#E76BA0] text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-all"
           >
             {t.discover}
@@ -241,23 +281,30 @@ const buildHeroSection = (t: TranslationStrings) =>{
         </div>
       </div>
     </div>
-    );
-  }
+  );
+};
 
-  const buildBuyEsimSection = (t: TranslationStrings): JSX.Element => {
-    return (
-          <div className="relative h-[900px] md:h-[800px]">
-
+const buildBuyEsimSection = (t: TranslationStrings): JSX.Element => {
+  return (
+    <div className="relative h-[900px] md:h-[800px]">
       {/* Background with gradient and bubble */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#763BB7] to-[#E76BA0]">
         <div className="p-8">
-          <img src="/dashboard/assets/assets/images/bubble1.svg" alt="Bubble 1" className="w-32" />
+          <img
+            src="/dashboard/assets/assets/images/bubble1.svg"
+            alt="Bubble 1"
+            className="w-32"
+          />
         </div>
       </div>
 
       {/* Wave overlay */}
       <div className="w-full overflow-hidden absolute bottom-0">
-        <img src="/dashboard/assets/assets/images/esim-wave-2.svg" alt="Wave 2" className="w-full scale-x-[1.01]" />
+        <img
+          src="/dashboard/assets/assets/images/esim-wave-2.svg"
+          alt="Wave 2"
+          className="w-full scale-x-[1.01]"
+        />
       </div>
 
       {/* Content */}
@@ -270,7 +317,6 @@ const buildHeroSection = (t: TranslationStrings) =>{
 
           {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
             {/* Buy Esim Card */}
             <div className="relative">
               <div className="bg-gradient-to-r from-[#763BB7] to-[#E76BA0] p-[1px] rounded-2xl">
@@ -281,7 +327,9 @@ const buildHeroSection = (t: TranslationStrings) =>{
                       alt="Esim Chip"
                       className="w-24 h-24 mb-4"
                     />
-                    <h3 className="text-xl font-bold text-gray-900">{t.buy_esim}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {t.buy_esim}
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -297,23 +345,23 @@ const buildHeroSection = (t: TranslationStrings) =>{
                       alt="Esim Globe"
                       className="w-24 h-24 mb-4"
                     />
-                    <h3 className="text-xl font-bold text-gray-900">{t.activate_abroad}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {t.activate_abroad}
+                    </h3>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-    );
-  }
+  );
+};
 
-  const buildDownloadAppSection = (t: TranslationStrings): JSX.Element => {
-    return (
-          <div className="relative bg-gradient-to-r from-[#008799] to-[#00E0FF] py-32 md:py-64 lg:py-96 md:mt-12 mt-42">
-
+const buildDownloadAppSection = (t: TranslationStrings): JSX.Element => {
+  return (
+    <div className="relative bg-gradient-to-r from-[#008799] to-[#00E0FF] py-32 md:py-64 lg:py-96 md:mt-12 mt-42">
       <div className="absolute -top-38 md:-top-16 lg:-top-24 z-10 w-full">
         <div className="flex flex-col items-center justify-center px-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#008799] to-[#00E0FF] text-transparent bg-clip-text text-center">
@@ -424,14 +472,13 @@ const buildHeroSection = (t: TranslationStrings) =>{
           className="w-full scale-x-[1.01]"
         />
       </div>
-
     </div>
-    );
-  }
+  );
+};
 
- const buildNewsletterSection = (t: TranslationStrings): JSX.Element => {
-    return (
-          <div className="container mx-auto px-4 sm:px-8 py-12 sm:py-16 md:mt-78 sm:mt-32 font-poppins">
+const buildNewsletterSection = (t: TranslationStrings): JSX.Element => {
+  return (
+    <div className="container mx-auto px-4 sm:px-8 py-12 sm:py-16 md:mt-78 sm:mt-32 font-poppins">
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-[#008799] to-[#00E0FF] text-transparent bg-clip-text text-center">
           {t.newsletter_title}
@@ -456,10 +503,10 @@ const buildHeroSection = (t: TranslationStrings) =>{
         </button>
       </div>
     </div>
-    );
-  }
-      
-  const Home = async ({ params }: Props) => {
+  );
+};
+
+const Home = async ({ params }: Props) => {
   const { lang } = await params;
   const t = getTranslations(lang);
 
@@ -474,5 +521,5 @@ const buildHeroSection = (t: TranslationStrings) =>{
       {buildNewsletterSection(t)}
     </>
   );
-}
+};
 export default Home;
