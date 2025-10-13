@@ -37,16 +37,18 @@ const TeamMember: React.FC<TeamMemberProps> = ({ image, name, role }) => (
 type AboutPageProps = {
   params: Promise<{ lang: string }>;
 };
-const AboutPage: React.FC<AboutPageProps> = async ({ params }: AboutPageProps) => {
-      const { lang } = await params;
-      const t = getTranslations(lang);
-    
+const AboutPage: React.FC<AboutPageProps> = async ({
+  params,
+}: AboutPageProps) => {
+  const { lang } = await params;
+  const t = getTranslations(lang);
+
   return (
     <div className="bg-white min-h-screen font-poppins mt-[100px]">
       {/* Hero Section */}
       <div className="relative">
         <div className="bg-gradient-to-r from-[#008799] to-[#00E0FF]">
-          <div className="container mx-auto px-8 pt-16 pb-48">
+          <div className="container mx-auto px-8 pt-16 pb-48 2xl:pb-64">
             <div className="flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl leading-15 mb-4 text-white font-bold">
                 {t.about_title}
