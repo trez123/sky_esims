@@ -125,7 +125,7 @@ const buildPlansSection = (t: TranslationStrings): JSX.Element => {
               </h3>
               <div className="flex items-center justify-center gap-4">
                 <img
-                  src="assets/assets/icons/flag.png"
+                  src="/dashboard/assets/assets/icons/flag.png"
                   alt="Country"
                   className="w-6 h-6"
                 />
@@ -133,7 +133,7 @@ const buildPlansSection = (t: TranslationStrings): JSX.Element => {
               </div>
               <div className="flex items-center justify-center gap-4">
                 <img
-                  src="assets/assets/icons/globe-gradient.png"
+                  src="/dashboard/assets/assets/icons/globe-gradient.png"
                   alt="Global"
                   className="w-6 h-6"
                 />
@@ -141,7 +141,7 @@ const buildPlansSection = (t: TranslationStrings): JSX.Element => {
               </div>
               <div className="flex items-center justify-center gap-4">
                 <img
-                  src="assets/assets/icons/buildings-gradient.png"
+                  src="/dashboard/assets/assets/icons/buildings-gradient.png"
                   alt="Regional"
                   className="w-6 h-6"
                 />
