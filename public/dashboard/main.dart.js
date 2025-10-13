@@ -116152,7 +116152,7 @@ case 6:g.sa0U(c)
 k=A.Eq()
 if(k==null)k=new A.mX(A.aV(t.m))
 j=t.N
-j=new A.T9("http://localhost:3000",m,k,A.n(j,j))
+j=new A.T9("https://api.skyesims.com",m,k,A.n(j,j))
 n.as=j
 n.z=new A.asF(j)
 k=n.yZ()
@@ -116490,7 +116490,7 @@ case 6:g.sa0U(c)
 k=A.Eq()
 if(k==null)k=new A.mX(A.aV(t.m))
 j=t.N
-j=new A.T9("http://localhost:3000",m,k,A.n(j,j))
+j=new A.T9("https://api.skyesims.com",m,k,A.n(j,j))
 n.f=j
 n.c=new A.aDt(j)
 o.push(5)
@@ -116645,7 +116645,7 @@ m.a=k
 k=A.Eq()
 if(k==null)k=new A.mX(A.aV(t.m))
 j=t.N
-j=new A.alE("http://localhost:3000",m,k,A.n(j,j))
+j=new A.alE("https://api.skyesims.com",m,k,A.n(j,j))
 n.ch=j
 n.ay=new A.aL9(j)
 o.push(5)
