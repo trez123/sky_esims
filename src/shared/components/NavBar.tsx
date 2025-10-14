@@ -101,8 +101,11 @@ function Navbar({ t }: NavbarProps) {
           alt="Esim Logo"
           width={60}
           height={60}
-          className="w-[60px] md:w-[70px] ml-1 mr-1.5 flex-shrink-0"
+          className="w-[60px] md:w-[70px] ml-1 mr-1.5 flex-shrink-0 cursor-pointer"
           priority
+          onClick={() => {
+            window.location.href = "/";
+          }}
         />
         <LanguageSelector />
       </div>

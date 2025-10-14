@@ -1,16 +1,16 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { TranslationStrings } from '../l10n/translations';
+import Image from "next/image";
+import Link from "next/link";
+import { TranslationStrings } from "../l10n/translations";
 
 interface FooterProps {
   t: TranslationStrings; // translations object, e.g. from getTranslations(lang)
 }
 
 const FOOTER_SOCIAL_ICONS = [
-  { href: '#', iconClass: 'fab fa-google-plus-g', label: 'Google Plus' },
-  { href: '#', iconClass: 'fab fa-facebook-f', label: 'Facebook' },
-  { href: '#', iconClass: 'fab fa-twitter', label: 'Twitter' },
-  { href: '#', iconClass: 'fab fa-instagram', label: 'Instagram' },
+  { href: "#", iconClass: "fab fa-google-plus-g", label: "Google Plus" },
+  { href: "#", iconClass: "fab fa-facebook-f", label: "Facebook" },
+  { href: "#", iconClass: "fab fa-twitter", label: "Twitter" },
+  { href: "#", iconClass: "fab fa-instagram", label: "Instagram" },
 ];
 
 const Footer = ({ t }: FooterProps) => {
@@ -21,7 +21,7 @@ const Footer = ({ t }: FooterProps) => {
         <div className="flex-1 flex flex-col gap-6 min-w-[220px]">
           <div>
             <Image
-              src="dashboard/assets/assets/images/esim-logo-white.svg"
+              src="/dashboard/assets/assets/images/esim-logo-white.svg"
               alt="Logo"
               width={100}
               height={60}
@@ -29,7 +29,9 @@ const Footer = ({ t }: FooterProps) => {
               priority
             />
           </div>
-          <p className="text-gray-300 text-sm max-w-xs">{t.footer_description}</p>
+          <p className="text-gray-300 text-sm max-w-xs">
+            {t.footer_description}
+          </p>
           <div className="flex gap-4 mt-2">
             {FOOTER_SOCIAL_ICONS.map(({ href, iconClass, label }) => (
               <a
@@ -49,22 +51,22 @@ const Footer = ({ t }: FooterProps) => {
         {/* Column 2: Links */}
         <div className="flex-1 flex flex-col gap-4 min-w-[180px]">
           <h3 className="text-xl mb-2">{t.sky_esim_links}</h3>
-          <Link href="/" className='hover:text-gray-400 text-sm'>
+          <Link href="/" className="hover:text-gray-400 text-sm">
             {t.home}
           </Link>
-          <Link href="/about" className='hover:text-gray-400 text-sm'>
+          <Link href="/about" className="hover:text-gray-400 text-sm">
             {t.about_us}
           </Link>
-          <Link href="/contact-us" className='hover:text-gray-400 text-sm'>
+          <Link href="/contact-us" className="hover:text-gray-400 text-sm">
             {t.contact_us}
           </Link>
-          <Link href="/esim_store" className='hover:text-gray-400 text-sm'>
+          <Link href="/esim_store" className="hover:text-gray-400 text-sm">
             {t.esim_store}
           </Link>
-          <Link href="/my_esims" className='hover:text-gray-400 text-sm'>
+          <Link href="/my_esims" className="hover:text-gray-400 text-sm">
             {t.my_esims}
           </Link>
-          <Link href="/profile" className='hover:text-gray-400 text-sm'>
+          <Link href="/profile" className="hover:text-gray-400 text-sm">
             {t.profile}
           </Link>
         </div>
