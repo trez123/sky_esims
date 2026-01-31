@@ -193,7 +193,7 @@ const buildPlansSection = (t: TranslationStrings): JSX.Element => {
               </div>
               <div className="flex justify-center">
                 <img
-                  src="assets/assets/icons/arrow-gradinet.png"
+                  src="/dashboard/assets/assets/icons/arrow-gradinet.png"
                   alt="Arrow"
                   className="w-1.5 h-4"
                 />
@@ -221,7 +221,7 @@ const buildPlansSection = (t: TranslationStrings): JSX.Element => {
               </div>
               <div className="flex justify-center">
                 <img
-                  src="assets/assets/icons/double-transfer.png"
+                  src="/dashboard/assets/assets/icons/double-transfer.png"
                   alt="Transfer"
                   className="w-3 h-4"
                 />
