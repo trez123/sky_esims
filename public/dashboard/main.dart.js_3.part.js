@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var B,A={
-bfW(d,e,f,g,h){var x,w,v
+bfY(d,e,f,g,h){var x,w,v
 try{document.title=h
 A.q_("description",e,!1)
 A.q_("og:title",h,!0)
@@ -13,7 +13,7 @@ A.q_("twitter:card","summary_large_image",!1)
 A.q_("twitter:title",h,!1)
 A.q_("twitter:description",e,!1)
 if(w)A.q_("twitter:image",f,!1)
-A.bwx(d)}catch(v){x=B.a2(v)
+A.bwz(d)}catch(v){x=B.a2(v)
 B.jZ("Error updating meta tags: "+B.i(x))}},
 q_(d,e,f){var x,w,v,u,t,s,r
 try{x=f?'meta[property="'+d+'"]':'meta[name="'+d+'"]'
@@ -27,7 +27,7 @@ s.content=e
 v=s
 t.head.appendChild(v).toString}}catch(r){u=B.a2(r)
 B.jZ("Error updating meta tag "+d+": "+B.i(u))}},
-bwx(d){var x,w,v,u,t,s
+bwz(d){var x,w,v,u,t,s
 try{u=document
 x=y.b.a(u.querySelector('link[rel="canonical"]'))
 if(x!=null)x.href=d
@@ -41,4 +41,4 @@ B=c[0]
 A=a.updateHolder(c[27],A)
 var z=a.updateTypes([])
 var y={b:B.F("AY?"),a:B.F("Bf?")}};
-(a=>{a["hpCmUurhDPXpJIpaRFguskjmhPY="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["gfq/W6YkM8nqHZ+YXWzsHBYPQRs="]=a.current})($__dart_deferred_initializers__);
