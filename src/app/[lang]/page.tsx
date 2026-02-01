@@ -374,7 +374,7 @@ const buildDownloadAppSection = (t: TranslationStrings): JSX.Element => {
         </p>
         <div className="flex justify-center gap-3 md:gap-4 mb-8 md:mb-16 items-center">
           <img
-            src="assets/assets/icons/app-store-logo.png"
+            src="/dashboard/assets/assets/icons/app-store-logo.png"
             alt="App Store"
             className="h-8 md:h-10"
           />
