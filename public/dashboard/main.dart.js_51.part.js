@@ -1,44 +1,57 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
-$__dart_deferred_initializers__.current=function(a,b,c,$){var B,D,A={AW:function AW(d,e){this.a=d
-this.b=e},aNg:function aNg(){},amK:function amK(){},
-bCX(d){switch(d.a){case 0:return D.oC
-case 2:return D.JA
-case 1:return D.Jz
-case 3:return C.akH
-case 4:return D.JB}},
-akK(d,e,f){var x=0,w=B.t(y.a),v,u
-var $async$akK=B.o(function(g,h){if(g===1)return B.p(h,w)
-for(;;)switch(x){case 0:if(e===C.a_X||e===C.a_Y)u=!(d.geX()==="https"||d.geX()==="http")
-else u=!1
-if(u)throw B.c(B.hU(d,"url","To use an in-app web view, you must provide an http(s) URL."))
-v=$.b9l().zM(d.j(0),new B.a_3(A.bCX(e),new B.ZH(!0,!0,D.eG),f))
-x=1
-break
-case 1:return B.q(v,w)}})
-return B.r($async$akK,w)},
-akz(d){var x=0,w=B.t(y.a),v
-var $async$akz=B.o(function(e,f){if(e===1)return B.p(f,w)
-for(;;)switch(x){case 0:v=$.b9l().a31(d.j(0))
-x=1
-break
-case 1:return B.q(v,w)}})
-return B.r($async$akz,w)}},C
-B=c[0]
-D=c[2]
-A=a.updateHolder(c[24],A)
-C=c[59]
-A.AW.prototype={
-I(){return"LaunchMode."+this.b}}
-A.aNg.prototype={}
-A.amK.prototype={}
-var z=a.updateTypes([]);(function inheritance(){var x=a.inherit,w=a.inheritMany
-x(A.AW,B.jN)
-w(B.x,[A.aNg,A.amK])})()
-var y={a:B.F("K")};(function constants(){C.az_=new A.amK()
-C.az3=new A.aNg()
-C.uD=new A.AW(0,"platformDefault")
-C.a_X=new A.AW(1,"inAppWebView")
-C.a_Y=new A.AW(2,"inAppBrowserView")
-C.a_Z=new A.AW(3,"externalApplication")
-C.akH=new B.x6(3,"externalApplication")})()};
-(a=>{a["rKTy51TAHQiL0jjqDBSBI4rlAeo="]=a.current})($__dart_deferred_initializers__);
+$__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,B,E,C={
+beV(){return new C.xb(null)},
+xb:function xb(d){this.a=d},
+aEU:function aEU(d){this.a=d},
+aES:function aES(d){this.a=d},
+aET:function aET(d){this.a=d}},D
+J=c[1]
+A=c[0]
+B=c[2]
+E=c[50]
+C=a.updateHolder(c[13],C)
+D=c[79]
+C.xb.prototype={
+F(d){var x,w,v,u,t,s,r,q,p,o,n,m,l=null,k=A.ce(d,B.as,y.F)
+k.toString
+x=new C.aEU(d)
+w=y.x
+v=A.Y(l,A.z(d,l,w).w.a.b*0.2,l)
+u=A.a_(d,!1,y.t).Q
+t=x.$0()?24:A.z(d,l,w).w.a.a*0.06
+s=x.$0()?24:A.z(d,l,w).w.a.a*0.04
+u=A.bp(l,new A.ay(new A.ac(s,t,s,t),D.Vw,l),B.u,l,l,new A.bK(l,l,l,l,l,new A.fb(B.bp,B.bo,B.ax,u,l,l),B.dd),l,l,l,l,l,l,l)
+t=A.ah(l,x.$0()?B.y:B.hI,B.k,l,l,"Thank you for making a purchase with Sky Esims!",l)
+s=A.z(d,l,w).w
+r=A.z(d,l,w).w
+q=x.$0()?350:l
+p=y.g
+A.a_(d,!1,p)
+o=y.u
+q=A.Y(A.b0(A.b([A.c3(A.eg(D.Z0,B.W,l,new C.aES(d),l,new A.cQ(A.cn(8),B.A)))],o),B.i,B.p,B.h),l,q)
+n=A.z(d,l,w).w
+w=A.z(d,l,w).w
+x=x.$0()?350:l
+m=A.cn(8)
+A.a_(d,!1,p)
+k=k.gGj()
+A.a_(d,!1,p)
+return new E.ep(l,A.c3(A.eM(A.aK(A.b([v,u,B.bx,D.YU,B.bx,t,B.bx,new A.ay(new A.ac(s.a.a*0.06,0,r.a.a*0.06,0),q,l),B.du,new A.ay(new A.ac(n.a.a*0.06,0,w.a.a*0.06,0),A.Y(A.b0(A.b([A.c3(A.eg(A.ah(l,B.aa,B.k,l,A.b8(l,l,B.W,l,l,l,l,l,l,l,l,l,l,l,B.aj,l,l,!0,l,l,l,l,l,l,l,l),k,l),B.D,0,new C.aET(d),l,new A.cQ(m,new A.bk(B.W,1,B.E,-1))))],o),B.i,B.p,B.h),l,x),l)],o),B.i,B.p,B.h),l,l)),B.iv,B.iv,l,l)}}
+var z=a.updateTypes([])
+C.aEU.prototype={
+$0(){return A.z(this.a,null,y.x).w.a.a>=900},
+$S:8}
+C.aES.prototype={
+$0(){var x=this.a
+return A.cu([A.dG(x).h9(0,"/my_esims",null),J.alc(A.a_(x,!1,y.m))],y.v)},
+$S:0}
+C.aET.prototype={
+$0(){return A.hb(this.a,"/review",y.q)},
+$S:0};(function inheritance(){var x=a.inherit,w=a.inheritMany
+x(C.xb,A.a3)
+w(A.dR,[C.aEU,C.aES,C.aET])})()
+A.cT(b.typeUniverse,JSON.parse('{"xb":{"a3":[],"d":[]}}'))
+var y={F:A.F("fF"),g:A.F("ec"),m:A.F("fK"),u:A.F("v<d>"),x:A.F("de"),t:A.F("ei"),q:A.F("x?"),v:A.F("~")};(function constants(){D.Vw=new A.iN("tick",50,null,B.ao,!0,!0,!1,null,null)
+D.YU=new A.fn("Purchase Confirmed!",B.S,B.b_,null,B.k,null,null,null)
+D.Z0=new A.fn("Continue",B.aa,B.bB,null,B.k,null,null,null)})()};
+(a=>{a["FL2SJg9f0s62PXn0XN+O1gfCReI="]=a.current})($__dart_deferred_initializers__);

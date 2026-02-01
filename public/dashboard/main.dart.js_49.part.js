@@ -1,25 +1,44 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
-$__dart_deferred_initializers__.current=function(a,b,c,$){var A,D,E,F,B={
-bb5(){return new B.vi(null)},
-vi:function vi(d){this.a=d},
-Vn:function Vn(d){this.a=d}},C
-A=c[0]
+$__dart_deferred_initializers__.current=function(a,b,c,$){var B,D,A={AW:function AW(d,e){this.a=d
+this.b=e},aNg:function aNg(){},amK:function amK(){},
+bCX(d){switch(d.a){case 0:return D.oC
+case 2:return D.JA
+case 1:return D.Jz
+case 3:return C.akF
+case 4:return D.JB}},
+akK(d,e,f){var x=0,w=B.t(y.a),v,u
+var $async$akK=B.o(function(g,h){if(g===1)return B.p(h,w)
+for(;;)switch(x){case 0:if(e===C.a_V||e===C.a_W)u=!(d.geX()==="https"||d.geX()==="http")
+else u=!1
+if(u)throw B.c(B.hU(d,"url","To use an in-app web view, you must provide an http(s) URL."))
+v=$.b9l().zM(d.j(0),new B.a_3(A.bCX(e),new B.ZH(!0,!0,D.eG),f))
+x=1
+break
+case 1:return B.q(v,w)}})
+return B.r($async$akK,w)},
+akz(d){var x=0,w=B.t(y.a),v
+var $async$akz=B.o(function(e,f){if(e===1)return B.p(f,w)
+for(;;)switch(x){case 0:v=$.b9l().a31(d.j(0))
+x=1
+break
+case 1:return B.q(v,w)}})
+return B.r($async$akz,w)}},C
+B=c[0]
 D=c[2]
-E=c[51]
-F=c[29]
-B=a.updateHolder(c[11],B)
-C=c[71]
-B.vi.prototype={
-F(d){var x=null,w=y.d
-return new E.ep("Coverage",A.c3(new A.ay(new A.ac(A.z(d,x,w).w.a.a*0.06,0,A.z(d,x,w).w.a.a*0.06,0),C.Sx,x)),x,x,x,x)}}
-B.Vn.prototype={
-F(d){return F.beG()}}
-var z=a.updateTypes([]);(function inheritance(){var x=a.inheritMany
-x(A.a3,[B.vi,B.Vn])})()
-A.cL(b.typeUniverse,JSON.parse('{"vi":{"a3":[],"d":[]},"Vn":{"a3":[],"d":[]}}'))
-var y={d:A.F("de")};(function constants(){var x=a.makeConstList
-C.SB=new B.Vn(null)
-C.Z8=new A.l1(1,D.fn,C.SB,null)
-C.ad6=x([C.Z8],A.F("v<d>"))
-C.Sx=new A.kU(D.at,D.p,D.h,D.i,null,D.e7,null,0,C.ad6,null)})()};
-(a=>{a["1gNejzSoeSqHv5HKRucDZjjSAtk="]=a.current})($__dart_deferred_initializers__);
+A=a.updateHolder(c[24],A)
+C=c[58]
+A.AW.prototype={
+I(){return"LaunchMode."+this.b}}
+A.aNg.prototype={}
+A.amK.prototype={}
+var z=a.updateTypes([]);(function inheritance(){var x=a.inherit,w=a.inheritMany
+x(A.AW,B.jN)
+w(B.x,[A.aNg,A.amK])})()
+var y={a:B.F("K")};(function constants(){C.ayY=new A.amK()
+C.az1=new A.aNg()
+C.uD=new A.AW(0,"platformDefault")
+C.a_V=new A.AW(1,"inAppWebView")
+C.a_W=new A.AW(2,"inAppBrowserView")
+C.a_X=new A.AW(3,"externalApplication")
+C.akF=new B.x6(3,"externalApplication")})()};
+(a=>{a["4GEg15swzFzqVmuyNOrIu7aUU+Y="]=a.current})($__dart_deferred_initializers__);
