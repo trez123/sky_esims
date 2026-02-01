@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var A,B,C={
-bfL(){return new C.xM(null)},
+bfM(){return new C.xM(null)},
 xM:function xM(d){this.a=d},
 aK2:function aK2(){}},D,E,F,G
 A=c[0]
@@ -20,9 +20,9 @@ $S:0};(function inheritance(){var x=a.inherit
 x(C.xM,A.a3)
 x(C.aK2,A.dR)})()
 A.cT(b.typeUniverse,JSON.parse('{"xM":{"a3":[],"d":[]}}'))
-var y={d:A.F("de")};(function constants(){var x=a.makeConstList
+var y={d:A.F("df")};(function constants(){var x=a.makeConstList
 D.YT=new A.fn("Sim Store",B.S,B.b_,null,B.k,null,null,null)
 D.YZ=new A.fn("Comming Soon!",B.S,B.b_,null,B.k,null,null,null)
 D.a8_=x([D.YZ],A.F("v<d>"))
 D.alH=new A.xs(B.b8,B.a1,B.h,B.i,null,B.e7,null,0,D.a8_,null)})()};
-(a=>{a["JY8IuelQ/es5/8w+UhSuJDVAsT0="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["K9cv+kwF3vNSDug7lAgj0ZdNgPg="]=a.current})($__dart_deferred_initializers__);

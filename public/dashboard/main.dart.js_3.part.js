@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var B,A={
-bfY(d,e,f,g,h){var x,w,v
+bfZ(d,e,f,g,h){var x,w,v
 try{document.title=h
 A.q_("description",e,!1)
 A.q_("og:title",h,!0)
@@ -41,4 +41,4 @@ B=c[0]
 A=a.updateHolder(c[27],A)
 var z=a.updateTypes([])
 var y={b:B.F("AY?"),a:B.F("Bf?")}};
-(a=>{a["gfq/W6YkM8nqHZ+YXWzsHBYPQRs="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["s5oTnJKqzoGPfOBVUOT0BdnxwDc="]=a.current})($__dart_deferred_initializers__);
