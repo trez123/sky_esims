@@ -4,6 +4,7 @@ import { TranslationStrings } from "../l10n/translations";
 
 interface FooterProps {
   t: TranslationStrings; // translations object, e.g. from getTranslations(lang)
+  lang?: string; // language code for routing
 }
 
 const FOOTER_SOCIAL_ICONS = [
@@ -13,7 +14,7 @@ const FOOTER_SOCIAL_ICONS = [
   { href: "#", iconClass: "fab fa-instagram", label: "Instagram" },
 ];
 
-const Footer = ({ t }: FooterProps) => {
+const Footer = ({ t, lang = "en" }: FooterProps) => {
   return (
     <footer className="bg-[#181818] text-white font-poppins pt-12 pb-4 px-6 md:px-16">
       <div className="flex w-full flex-col md:flex-row justify-between gap-12 md:gap-6">
@@ -51,59 +52,58 @@ const Footer = ({ t }: FooterProps) => {
         {/* Column 2: Links */}
         <div className="flex-1 flex flex-col gap-4 min-w-[180px]">
           <h3 className="text-xl mb-2">{t.sky_esim_links}</h3>
-          <Link href="/" className="hover:text-gray-400 text-sm">
+          <Link href={`/${lang}`} className="hover:text-gray-400 text-sm">
             {t.home}
           </Link>
-          <Link href="/about" className="hover:text-gray-400 text-sm">
+          <Link href={`/${lang}/about`} className="hover:text-gray-400 text-sm">
             {t.about_us}
           </Link>
-          <Link href="/contact-us" className="hover:text-gray-400 text-sm">
+          <Link href={`/${lang}/contact`} className="hover:text-gray-400 text-sm">
             {t.contact_us}
           </Link>
-          <Link href="/esim_store" className="hover:text-gray-400 text-sm">
+          <Link href={`/${lang}/dashboard`} className="hover:text-gray-400 text-sm">
             {t.esim_store}
-          </Link>
-          <Link href="/my_esims" className="hover:text-gray-400 text-sm">
-            {t.my_esims}
-          </Link>
-          <Link href="/profile" className="hover:text-gray-400 text-sm">
-            {t.profile}
           </Link>
         </div>
 
         {/* Column 3: Contact */}
         <div className="flex-1 flex flex-col gap-4 min-w-[180px]">
           <h3 className="text-xl mb-2">{t.contact_us}</h3>
-          {/* Uncomment and add actual contact info if desired */}
-          {/* <p className="text-sm">(+876) 8329390</p> */}
-          {/* <p className="text-sm">silas@byllkreate.com</p> */}
-          {/* <p className="text-sm">1000 Old Hope Road, Kingston 10</p> */}
-          <a href="#" className="hover:text-gray-400 text-sm mt-2">
-            {t.download_our_app}
-          </a>
+          <p className="text-sm text-gray-300">{t.phone_value}</p>
+          <p className="text-sm text-gray-300">{t.email_value}</p>
+          <p className="text-sm text-gray-300">{t.address_value}</p>
+          <p className="text-sm text-gray-400 mt-2">{t.working_hours_value}</p>
         </div>
 
-        {/* Column 4: Instagram grid */}
-        <div className="flex-1 flex flex-col gap-4 min-w-[220px]">
-          <h3 className="text-xl mb-2">{t.sky_esim_instagram}</h3>
-          <div className="grid grid-cols-4 grid-rows-2 gap-2">
-            {[...Array(8)].map((_, i) => (
-              <div
-                key={i}
-                className="bg-gray-300 aspect-square flex hover:bg-gray-200 cursor-pointer transition-all duration-300 items-center justify-center"
-              >
-                {i === 1 && (
-                  <span className="text-2xl text-white select-none">+</span>
-                )}
-              </div>
-            ))}
-          </div>
+        {/* Column 4: Legal */}
+        <div className="flex-1 flex flex-col gap-4 min-w-[180px]">
+          <h3 className="text-xl mb-2">{t.legal}</h3>
+          <Link href={`/${lang}/privacy`} className="hover:text-gray-400 text-sm">
+            {t.privacy_policy}
+          </Link>
+          <Link href={`/${lang}/terms`} className="hover:text-gray-400 text-sm">
+            {t.terms_of_service}
+          </Link>
+          <Link href={`/${lang}/refund`} className="hover:text-gray-400 text-sm">
+            {t.refund_policy}
+          </Link>
         </div>
       </div>
 
       {/* Copyright bar */}
       <div className="mt-10 border-t border-gray-700 pt-4 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
         <span>{t.copyright}</span>
+        <div className="flex gap-4 mt-2 md:mt-0">
+          <Link href={`/${lang}/privacy`} className="hover:text-gray-300">
+            {t.privacy_policy}
+          </Link>
+          <Link href={`/${lang}/terms`} className="hover:text-gray-300">
+            {t.terms_of_service}
+          </Link>
+          <Link href={`/${lang}/refund`} className="hover:text-gray-300">
+            {t.refund_policy}
+          </Link>
+        </div>
       </div>
     </footer>
   );

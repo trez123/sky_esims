@@ -15,7 +15,7 @@ export default async function DashboardLayout({ children, params } : Props) {
     <div>
         <Navbar t={t} />
         {children}
-        <Footer t={t}/>
+        <Footer t={t} lang={lang}/>
     </div>
   );
 }

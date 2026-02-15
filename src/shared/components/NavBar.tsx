@@ -83,6 +83,9 @@ function Navbar({ t }: NavbarProps) {
     ...getLanguagePath(),
     ...getLanguagePath("/about"),
     ...getLanguagePath("/contact"),
+    ...getLanguagePath("/privacy"),
+    ...getLanguagePath("/terms"),
+    ...getLanguagePath("/refund"),
   ];
   console.log("Fixed Navbar Routes:", fixedNavbarRoutes);
   console.log("Current Route:", currentRoute);
@@ -138,9 +141,9 @@ function Navbar({ t }: NavbarProps) {
                 width="294.953"
                 height="211.794"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix
                   in="SourceAlpha"
                   type="matrix"
@@ -174,8 +177,8 @@ function Navbar({ t }: NavbarProps) {
                 y2="121.668"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#00E0FF" />
-                <stop offset="1" stop-color="#008799" />
+                <stop stopColor="#00E0FF" />
+                <stop offset="1" stopColor="#008799" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_1201_6"
@@ -185,8 +188,8 @@ function Navbar({ t }: NavbarProps) {
                 y2="152.515"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#00E0FF" />
-                <stop offset="1" stop-color="#008799" />
+                <stop stopColor="#00E0FF" />
+                <stop offset="1" stopColor="#008799" />
               </linearGradient>
               <linearGradient
                 id="paint2_linear_1201_6"
@@ -196,8 +199,8 @@ function Navbar({ t }: NavbarProps) {
                 y2="101.897"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#00E0FF" />
-                <stop offset="1" stop-color="#008799" />
+                <stop stopColor="#00E0FF" />
+                <stop offset="1" stopColor="#008799" />
               </linearGradient>
             </defs>
           </svg>
