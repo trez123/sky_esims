@@ -58,10 +58,16 @@ const Footer = ({ t, lang = "en" }: FooterProps) => {
           <Link href={`/${lang}/about`} className="hover:text-gray-400 text-sm">
             {t.about_us}
           </Link>
-          <Link href={`/${lang}/contact`} className="hover:text-gray-400 text-sm">
+          <Link
+            href={`/${lang}/contact`}
+            className="hover:text-gray-400 text-sm"
+          >
             {t.contact_us}
           </Link>
-          <Link href={`/${lang}/dashboard`} className="hover:text-gray-400 text-sm">
+          <Link
+            href={`/${lang}/dashboard`}
+            className="hover:text-gray-400 text-sm"
+          >
             {t.esim_store}
           </Link>
         </div>
@@ -71,20 +77,26 @@ const Footer = ({ t, lang = "en" }: FooterProps) => {
           <h3 className="text-xl mb-2">{t.contact_us}</h3>
           <p className="text-sm text-gray-300">{t.phone_value}</p>
           <p className="text-sm text-gray-300">{t.email_value}</p>
-          <p className="text-sm text-gray-300">{t.address_value}</p>
+          {/* <p className="text-sm text-gray-300">{t.address_value}</p> */}
           <p className="text-sm text-gray-400 mt-2">{t.working_hours_value}</p>
         </div>
 
         {/* Column 4: Legal */}
         <div className="flex-1 flex flex-col gap-4 min-w-[180px]">
           <h3 className="text-xl mb-2">{t.legal}</h3>
-          <Link href={`/${lang}/privacy`} className="hover:text-gray-400 text-sm">
+          <Link
+            href={`/${lang}/privacy`}
+            className="hover:text-gray-400 text-sm"
+          >
             {t.privacy_policy}
           </Link>
           <Link href={`/${lang}/terms`} className="hover:text-gray-400 text-sm">
             {t.terms_of_service}
           </Link>
-          <Link href={`/${lang}/refund`} className="hover:text-gray-400 text-sm">
+          <Link
+            href={`/${lang}/refund`}
+            className="hover:text-gray-400 text-sm"
+          >
             {t.refund_policy}
           </Link>
         </div>
