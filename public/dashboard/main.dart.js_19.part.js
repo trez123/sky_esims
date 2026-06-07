@@ -3,9 +3,9 @@ $__dart_deferred_initializers__.current=function(a,b,c,$){var C,B,D,A={
 Ai(d,e,f,g){return new D.U(f,e,d,g)}}
 C=c[0]
 B=c[2]
-D=c[39]
-A=a.updateHolder(c[35],A)
+D=c[40]
+A=a.updateHolder(c[36],A)
 var z=a.updateTypes([]);(function lazyInitializers(){var y=a.lazyFinal
-y($,"bN6","ba3",()=>{var x="North America",w="Eastern Europe",v="Central America"
+y($,"bNA","bao",()=>{var x="North America",w="Eastern Europe",v="Central America"
 return C.b([A.Ai("north-america",x,x,B.ch),A.Ai("pacific","Oceania","Oceania",B.ch),A.Ai("global","Global","Global",B.ch),A.Ai("europe",w,w,B.ch),A.Ai("asia","Asia","Asia",B.ch),A.Ai("africa","Africa","Africa",B.ch),A.Ai("south-america",v,v,B.ch)],C.F("v<U>"))})})()};
-(a=>{a["EiJp+vSHS5jjPWHP/wwaLxFXOtM="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["afoL8eRb6kwfLbr9Q3ioGGN1id0="]=a.current})($__dart_deferred_initializers__);
