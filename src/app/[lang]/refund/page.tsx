@@ -1,8 +1,44 @@
 import { getTranslations } from "@/shared/l10n/translations";
+import type { Metadata } from "next";
+import { buildMetadata, SITE_LOCALES, SiteLocale } from "@/app/metadata";
 
 type RefundPageProps = {
   params: Promise<{ lang: string }>;
 };
+
+const REFUND_META: Record<SiteLocale, { title: string; description: string }> =
+  {
+    en: {
+      title: "Refund & Cancellation Policy | Sky eSims",
+      description:
+        "Sky eSims Refund & Cancellation Policy. Eligibility, request steps and timelines for Jamaica and global eSIM purchases.",
+    },
+    es: {
+      title: "Política de Reembolso y Cancelación | Sky eSims",
+      description:
+        "Política de Reembolso y Cancelación de Sky eSims. Elegibilidad, pasos para solicitar reembolso y tiempos para compras de eSIM.",
+    },
+    pt: {
+      title: "Política de Reembolso e Cancelamento | Sky eSims",
+      description:
+        "Política de Reembolso e Cancelamento da Sky eSims. Elegibilidade, passos e prazos para compras de eSIM.",
+    },
+  };
+
+export async function generateMetadata({
+  params,
+}: RefundPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = (SITE_LOCALES.includes(lang as SiteLocale)
+    ? lang
+    : "en") as SiteLocale;
+  return buildMetadata({
+    locale,
+    path: `/${locale}/refund`,
+    title: REFUND_META[locale].title,
+    description: REFUND_META[locale].description,
+  });
+}
 
 const RefundPage: React.FC<RefundPageProps> = async ({
   params,

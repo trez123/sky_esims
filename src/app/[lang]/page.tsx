@@ -2,15 +2,58 @@ import {
   getTranslations,
   TranslationStrings,
 } from "@/shared/l10n/translations";
-import Image from "next/image";
-import LanguageToggle from "../../shared/components/LanguageSelector";
-import Navbar from "@/shared/components/NavBar";
-import Footer from "@/shared/components/Footer";
 import { JSX } from "react";
+import type { Metadata } from "next";
+import {
+  buildMetadata,
+  SITE_LOCALES,
+  SITE_URL,
+  SiteLocale,
+} from "@/app/metadata";
+import {
+  JsonLdScript,
+  esimProductSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from "@/shared/seo/structured-data";
 
 type Props = {
   params: Promise<{ lang: string }>;
 };
+
+const HOME_META: Record<SiteLocale, { title: string; description: string }> = {
+  en: {
+    title:
+      "Sky eSims — Buy eSIM for Jamaica & 190+ Countries | Instant Activation",
+    description:
+      "The #1 eSIM for Jamaica. Sky eSims lets you buy a prepaid or unlimited Jamaica eSIM in minutes — no roaming, no SIM swap. Plus global plans for 190+ countries.",
+  },
+  es: {
+    title:
+      "Sky eSims — Compra eSIM para Jamaica y 190+ países | Activación instantánea",
+    description:
+      "La mejor eSIM para Jamaica. Compra una eSIM prepagada o ilimitada para Jamaica en minutos con Sky eSims — sin roaming, sin cambiar tarjeta. Planes globales para 190+ países.",
+  },
+  pt: {
+    title:
+      "Sky eSims — Compre eSIM para Jamaica e 190+ países | Ativação instantânea",
+    description:
+      "O melhor eSIM para a Jamaica. Compre um eSIM pré-pago ou ilimitado para a Jamaica em minutos com a Sky eSims — sem roaming, sem trocar de chip. Planos globais para 190+ países.",
+  },
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = (
+    SITE_LOCALES.includes(lang as SiteLocale) ? lang : "en"
+  ) as SiteLocale;
+  return buildMetadata({
+    locale,
+    path: `/${locale}`,
+    title: HOME_META[locale].title,
+    description: HOME_META[locale].description,
+  });
+}
 const buildHeroSection = (t: TranslationStrings) => {
   return (
     <div className="relative font-poppins mt-[100px]">
@@ -227,7 +270,7 @@ const buildPlansSection = (t: TranslationStrings): JSX.Element => {
                 />
               </div>
               <div>
-                <span className="font-bold">{`${t.less_than} 3 `}</span>
+                <span className="font-bold">{`${t.less_than} 15 `}</span>
                 <span className="font-normal">{t.usd}</span>
               </div>
             </div>
@@ -478,7 +521,7 @@ const buildDownloadAppSection = (t: TranslationStrings): JSX.Element => {
 
 const buildNewsletterSection = (t: TranslationStrings): JSX.Element => {
   return (
-    <div className="container mx-auto px-4 sm:px-8 py-12 sm:py-16 md:mt-78 sm:mt-32 font-poppins">
+    <div className="container mx-auto px-4 sm:px-8 py-12 sm:py-16 sm:mt-32 font-poppins">
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-[#008799] to-[#00E0FF] text-transparent bg-clip-text text-center">
           {t.newsletter_title}
@@ -506,18 +549,139 @@ const buildNewsletterSection = (t: TranslationStrings): JSX.Element => {
   );
 };
 
+const buildSeoSection = (locale: SiteLocale): JSX.Element => {
+  const copy = {
+    en: {
+      h2: "Buy an eSIM for Jamaica — instant data the moment you land",
+      intro:
+        "Sky eSims is a Jamaica-based provider that delivers reliable, prepaid and unlimited mobile data plans for travelers visiting Jamaica and locals heading abroad. Skip overpriced roaming, skip the airport SIM kiosk — buy your Jamaica eSIM online, install it before your flight, and connect to local 4G/5G networks the second your plane touches down in Kingston, Montego Bay, Negril, or Ocho Rios.",
+      h3a: "Why travelers choose Sky eSims for Jamaica",
+      bullets: [
+        "Instant digital delivery — receive your Jamaica eSIM by email in minutes.",
+        "Prepaid plans from under $3 JMD and unlimited postpaid options up to 180 days.",
+        "Works on iPhone XS and newer, Samsung Galaxy S20+ and Google Pixel 3+.",
+        "Local Jamaican 4G/5G partner networks — no throttling, no roaming surcharges.",
+        "Global and Caribbean regional plans covering 190+ countries.",
+        "24/7 customer support based in Jamaica, in English, Spanish and Portuguese.",
+      ],
+      h3b: "eSIM Jamaica plans for every kind of trip",
+      copy: "Whether you're a cruise passenger docking in Falmouth, a digital nomad working remotely from Treasure Beach, a family booked at an all-inclusive in Negril, or a business traveler in New Kingston — there's a Sky eSims data plan that fits. Choose country-specific Jamaica data, Caribbean regional plans that follow you across the islands, or global eSIMs that keep you connected from Jamaica to anywhere on earth.",
+      h3c: "How to install a Sky eSims Jamaica eSIM",
+      steps: [
+        "Pick a Jamaica or global plan and pay securely in JMD.",
+        "Receive your eSIM QR code and activation guide instantly by email.",
+        "Scan the QR code on an eSIM-compatible iPhone, Samsung or Pixel.",
+        "Land in Jamaica and toggle the eSIM on — you're online in seconds.",
+      ],
+    },
+    es: {
+      h2: "Compra una eSIM para Jamaica — datos al instante al aterrizar",
+      intro:
+        "Sky eSims es un proveedor con sede en Jamaica que ofrece planes de datos móviles confiables, prepagados e ilimitados para viajeros que visitan Jamaica y locales que viajan al exterior. Olvídate del roaming caro y de las filas en el aeropuerto: compra tu eSIM para Jamaica en línea, instálala antes del vuelo y conéctate a redes 4G/5G locales en cuanto aterrices en Kingston, Montego Bay, Negril u Ocho Rios.",
+      h3a: "Por qué los viajeros eligen Sky eSims para Jamaica",
+      bullets: [
+        "Entrega digital instantánea — recibe tu eSIM de Jamaica por correo en minutos.",
+        "Planes prepagados desde menos de 3 JMD y opciones ilimitadas hasta 180 días.",
+        "Compatible con iPhone XS o más nuevo, Samsung Galaxy S20+ y Google Pixel 3+.",
+        "Redes 4G/5G locales jamaiquinas — sin estrangulamiento ni recargos de roaming.",
+        "Planes globales y regionales del Caribe en más de 190 países.",
+        "Soporte 24/7 desde Jamaica en inglés, español y portugués.",
+      ],
+      h3b: "Planes eSIM Jamaica para cada tipo de viaje",
+      copy: "Ya sea que llegues en crucero a Falmouth, trabajes en remoto desde Treasure Beach, viajes en familia a un resort en Negril o por negocios a New Kingston — hay un plan de Sky eSims para ti. Elige datos específicos para Jamaica, planes regionales del Caribe o eSIMs globales que te mantienen conectado desde Jamaica al mundo.",
+      h3c: "Cómo instalar una eSIM de Sky eSims para Jamaica",
+      steps: [
+        "Elige un plan de Jamaica o global y paga de forma segura en JMD.",
+        "Recibe tu código QR y guía de activación al instante por email.",
+        "Escanea el código en un iPhone, Samsung o Pixel compatible con eSIM.",
+        "Aterriza en Jamaica, activa la eSIM y conéctate en segundos.",
+      ],
+    },
+    pt: {
+      h2: "Compre um eSIM para a Jamaica — dados na hora ao desembarcar",
+      intro:
+        "A Sky eSims é uma provedora baseada na Jamaica que oferece planos de dados móveis confiáveis, pré-pagos e ilimitados para viajantes que visitam a Jamaica e locais que viajam para o exterior. Sem roaming caro, sem fila no quiosque do aeroporto: compre seu eSIM para a Jamaica online, instale antes do voo e conecte-se às redes 4G/5G locais assim que pousar em Kingston, Montego Bay, Negril ou Ocho Rios.",
+      h3a: "Por que viajantes escolhem a Sky eSims para a Jamaica",
+      bullets: [
+        "Entrega digital imediata — receba seu eSIM da Jamaica por e-mail em minutos.",
+        "Planos pré-pagos a partir de menos de 3 JMD e opções ilimitadas por até 180 dias.",
+        "Compatível com iPhone XS ou mais novo, Samsung Galaxy S20+ e Google Pixel 3+.",
+        "Redes 4G/5G locais jamaicanas — sem throttling, sem taxas de roaming.",
+        "Planos globais e regionais do Caribe em mais de 190 países.",
+        "Suporte 24/7 na Jamaica em inglês, espanhol e português.",
+      ],
+      h3b: "Planos eSIM Jamaica para todo tipo de viagem",
+      copy: "Seja chegando de cruzeiro em Falmouth, trabalhando remoto em Treasure Beach, viajando em família para um resort em Negril ou a negócios em New Kingston — há um plano Sky eSims para você. Escolha dados só para a Jamaica, planos regionais do Caribe ou eSIMs globais que mantêm você conectado da Jamaica ao mundo.",
+      h3c: "Como instalar um eSIM da Sky eSims para a Jamaica",
+      steps: [
+        "Escolha um plano da Jamaica ou global e pague com segurança em JMD.",
+        "Receba seu QR code e guia de ativação por e-mail na hora.",
+        "Escaneie o QR num iPhone, Samsung ou Pixel compatível com eSIM.",
+        "Pouse na Jamaica, ative o eSIM e fique online em segundos.",
+      ],
+    },
+  } as const;
+
+  const c = copy[locale];
+  return (
+    <section
+      aria-labelledby="esim-jamaica-seo"
+      className="container mx-auto px-4 sm:px-8 py-12 sm:py-16 md:mt-78 sm:mt-32 font-poppins"
+    >
+      <div className="max-w-4xl mx-auto">
+        <h2
+          id="esim-jamaica-seo"
+          className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#008799] to-[#00E0FF] text-transparent bg-clip-text"
+        >
+          {c.h2}
+        </h2>
+        <div className="w-10 h-1 bg-gradient-to-r from-[#008799] to-[#00E0FF] rounded mb-6" />
+        <p className="text-gray-700 mb-10 leading-12">{c.intro}</p>
+
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900">{c.h3a}</h3>
+        <ul className="list-disc pl-6 text-gray-700 leading-12 space-y-2 mb-10">
+          {c.bullets.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
+
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900">{c.h3b}</h3>
+        <p className="text-gray-700 mb-10 leading-12">{c.copy}</p>
+
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900">{c.h3c}</h3>
+        <ol className="list-decimal pl-6 leading-12 text-gray-700 space-y-2">
+          {c.steps.map((s) => (
+            <li key={s}>{s}</li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+};
+
 const Home = async ({ params }: Props) => {
   const { lang } = await params;
-  const t = getTranslations(lang);
+  const locale = (
+    SITE_LOCALES.includes(lang as SiteLocale) ? lang : "en"
+  ) as SiteLocale;
+  const t = getTranslations(locale);
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: `${SITE_URL}/${locale}` },
+  ]);
 
   return (
     <>
+      <JsonLdScript id="ld-product-home" data={esimProductSchema} />
+      <JsonLdScript id="ld-faq-home" data={faqSchema} />
+      <JsonLdScript id="ld-breadcrumb-home" data={breadcrumbs} />
       {buildHeroSection(t)}
       {buildWelcomeSection(t)}
       {buildPlansSection(t)}
       {buildExperienceSection(t)}
       {buildBuyEsimSection(t)}
       {buildDownloadAppSection(t)}
+      {buildSeoSection(locale)}
       {buildNewsletterSection(t)}
     </>
   );

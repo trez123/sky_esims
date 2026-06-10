@@ -1,4 +1,45 @@
 import { getTranslations } from "@/shared/l10n/translations";
+import type { Metadata } from "next";
+import { buildMetadata, SITE_LOCALES, SITE_URL, SiteLocale } from "@/app/metadata";
+import {
+  JsonLdScript,
+  breadcrumbSchema,
+} from "@/shared/seo/structured-data";
+
+const ABOUT_META: Record<SiteLocale, { title: string; description: string }> = {
+  en: {
+    title: "About Sky eSims | Jamaica's Trusted Global eSIM Provider",
+    description:
+      "Sky eSims is a Jamaica-based eSIM company on a mission to give travelers reliable, affordable mobile data in Jamaica, the Caribbean, and 190+ countries worldwide.",
+  },
+  es: {
+    title: "Sobre Sky eSims | Proveedor confiable de eSIM en Jamaica",
+    description:
+      "Sky eSims es una empresa de eSIM con sede en Jamaica que ofrece a los viajeros datos móviles confiables y económicos en Jamaica, el Caribe y más de 190 países.",
+  },
+  pt: {
+    title: "Sobre a Sky eSims | Provedora de eSIM da Jamaica",
+    description:
+      "A Sky eSims é uma empresa de eSIM baseada na Jamaica que oferece dados móveis confiáveis e acessíveis na Jamaica, no Caribe e em mais de 190 países.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = (SITE_LOCALES.includes(lang as SiteLocale)
+    ? lang
+    : "en") as SiteLocale;
+  return buildMetadata({
+    locale,
+    path: `/${locale}/about`,
+    title: ABOUT_META[locale].title,
+    description: ABOUT_META[locale].description,
+  });
+}
 
 interface ValueCardProps {
   icon: string;
@@ -41,10 +82,19 @@ const AboutPage: React.FC<AboutPageProps> = async ({
   params,
 }: AboutPageProps) => {
   const { lang } = await params;
-  const t = getTranslations(lang);
+  const locale = (SITE_LOCALES.includes(lang as SiteLocale)
+    ? lang
+    : "en") as SiteLocale;
+  const t = getTranslations(locale);
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: `${SITE_URL}/${locale}` },
+    { name: "About", url: `${SITE_URL}/${locale}/about` },
+  ]);
 
   return (
     <div className="bg-white min-h-screen font-poppins mt-[100px]">
+      <JsonLdScript id="ld-breadcrumb-about" data={breadcrumbs} />
       {/* Hero Section */}
       <div className="relative">
         <div className="bg-gradient-to-r from-[#008799] to-[#00E0FF]">

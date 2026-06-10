@@ -1,5 +1,55 @@
 import { getTranslations } from "@/shared/l10n/translations";
 import React from "react";
+import type { Metadata } from "next";
+import {
+  buildMetadata,
+  SITE_LOCALES,
+  SITE_URL,
+  SiteLocale,
+} from "@/app/metadata";
+import {
+  JsonLdScript,
+  breadcrumbSchema,
+  localBusinessSchema,
+} from "@/shared/seo/structured-data";
+
+const CONTACT_META: Record<
+  SiteLocale,
+  { title: string; description: string }
+> = {
+  en: {
+    title: "Contact Sky eSims | Jamaica eSIM Support — Email & Phone",
+    description:
+      "Get in touch with Sky eSims support in Kingston, Jamaica. Email support@skyesims.com or call +1 (876) 598-3127 for help with your Jamaica or global eSIM.",
+  },
+  es: {
+    title: "Contacta a Sky eSims | Soporte de eSIM en Jamaica",
+    description:
+      "Comunícate con el soporte de Sky eSims en Kingston, Jamaica. Email support@skyesims.com o llama al +1 (876) 598-3127 para ayuda con tu eSIM.",
+  },
+  pt: {
+    title: "Contate a Sky eSims | Suporte de eSIM na Jamaica",
+    description:
+      "Fale com o suporte da Sky eSims em Kingston, Jamaica. E-mail support@skyesims.com ou ligue +1 (876) 598-3127 para ajuda com seu eSIM.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = (SITE_LOCALES.includes(lang as SiteLocale)
+    ? lang
+    : "en") as SiteLocale;
+  return buildMetadata({
+    locale,
+    path: `/${locale}/contact`,
+    title: CONTACT_META[locale].title,
+    description: CONTACT_META[locale].description,
+  });
+}
 
 interface ContactInfoProps {
   icon: string;
@@ -25,9 +75,20 @@ const ContactUsPage: React.FC<ContactUsPageProps> = async ({
   params,
 }: ContactUsPageProps) => {
   const { lang } = await params;
-  const t = getTranslations(lang);
+  const locale = (SITE_LOCALES.includes(lang as SiteLocale)
+    ? lang
+    : "en") as SiteLocale;
+  const t = getTranslations(locale);
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: `${SITE_URL}/${locale}` },
+    { name: "Contact", url: `${SITE_URL}/${locale}/contact` },
+  ]);
+
   return (
     <div className="bg-white min-h-screen font-poppins mt-[100px]">
+      <JsonLdScript id="ld-breadcrumb-contact" data={breadcrumbs} />
+      <JsonLdScript id="ld-localbusiness-contact" data={localBusinessSchema} />
       {/* Hero Section */}
       <div className="relative">
         <div className="bg-gradient-to-r from-[#008799] to-[#00E0FF]">

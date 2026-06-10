@@ -1,8 +1,43 @@
 import { getTranslations } from "@/shared/l10n/translations";
+import type { Metadata } from "next";
+import { buildMetadata, SITE_LOCALES, SiteLocale } from "@/app/metadata";
 
 type TermsPageProps = {
   params: Promise<{ lang: string }>;
 };
+
+const TERMS_META: Record<SiteLocale, { title: string; description: string }> = {
+  en: {
+    title: "Terms of Service | Sky eSims",
+    description:
+      "Sky eSims Terms of Service for Jamaica and international eSIM customers — please read before purchasing or activating an eSIM.",
+  },
+  es: {
+    title: "Términos del Servicio | Sky eSims",
+    description:
+      "Términos del Servicio de Sky eSims para clientes de eSIM en Jamaica e internacionales — léelos antes de comprar o activar una eSIM.",
+  },
+  pt: {
+    title: "Termos de Serviço | Sky eSims",
+    description:
+      "Termos de Serviço da Sky eSims para clientes de eSIM na Jamaica e internacionais — leia antes de comprar ou ativar um eSIM.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: TermsPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = (SITE_LOCALES.includes(lang as SiteLocale)
+    ? lang
+    : "en") as SiteLocale;
+  return buildMetadata({
+    locale,
+    path: `/${locale}/terms`,
+    title: TERMS_META[locale].title,
+    description: TERMS_META[locale].description,
+  });
+}
 
 const TermsPage: React.FC<TermsPageProps> = async ({
   params,

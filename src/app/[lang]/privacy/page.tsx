@@ -1,8 +1,46 @@
 import { getTranslations } from "@/shared/l10n/translations";
+import type { Metadata } from "next";
+import { buildMetadata, SITE_LOCALES, SiteLocale } from "@/app/metadata";
 
 type PrivacyPageProps = {
   params: Promise<{ lang: string }>;
 };
+
+const PRIVACY_META: Record<
+  SiteLocale,
+  { title: string; description: string }
+> = {
+  en: {
+    title: "Privacy Policy | Sky eSims",
+    description:
+      "Read the Sky eSims Privacy Policy: how we collect, use, and protect personal data for our Jamaica and global eSIM customers.",
+  },
+  es: {
+    title: "Política de Privacidad | Sky eSims",
+    description:
+      "Política de Privacidad de Sky eSims: cómo recopilamos, usamos y protegemos los datos personales de nuestros clientes de eSIM.",
+  },
+  pt: {
+    title: "Política de Privacidade | Sky eSims",
+    description:
+      "Política de Privacidade da Sky eSims: como coletamos, usamos e protegemos os dados dos nossos clientes de eSIM.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: PrivacyPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = (SITE_LOCALES.includes(lang as SiteLocale)
+    ? lang
+    : "en") as SiteLocale;
+  return buildMetadata({
+    locale,
+    path: `/${locale}/privacy`,
+    title: PRIVACY_META[locale].title,
+    description: PRIVACY_META[locale].description,
+  });
+}
 
 const PrivacyPage: React.FC<PrivacyPageProps> = async ({
   params,
