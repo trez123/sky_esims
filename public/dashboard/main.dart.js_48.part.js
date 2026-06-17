@@ -11,14 +11,14 @@ var $async$b3C=B.n(function(g,h){if(g===1)return B.o(h,w)
 for(;;)switch(x){case 0:if(e===C.a04||e===C.a05)u=!(d.geX()==="https"||d.geX()==="http")
 else u=!1
 if(u)throw B.c(B.hV(d,"url","To use an in-app web view, you must provide an http(s) URL."))
-v=$.b9M().zW(d.j(0),new B.a_d(A.bDw(e),new B.ZR(!0,!0,D.eH),f))
+v=$.b9N().zW(d.j(0),new B.a_d(A.bDw(e),new B.ZR(!0,!0,D.eH),f))
 x=1
 break
 case 1:return B.p(v,w)}})
 return B.q($async$b3C,w)},
 b2p(d){var x=0,w=B.r(y.a),v
 var $async$b2p=B.n(function(e,f){if(e===1)return B.o(f,w)
-for(;;)switch(x){case 0:v=$.b9M().a3g(d.j(0))
+for(;;)switch(x){case 0:v=$.b9N().a3g(d.j(0))
 x=1
 break
 case 1:return B.p(v,w)}})
@@ -41,4 +41,4 @@ C.a04=new A.AX(1,"inAppWebView")
 C.a05=new A.AX(2,"inAppBrowserView")
 C.a06=new A.AX(3,"externalApplication")
 C.akO=new B.x8(3,"externalApplication")})()};
-(a=>{a["zDj75RzL68ztNbWgVpwxEChwllY="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["UWEbxK5F9kbVk8gcpjFeCG1kxuw="]=a.current})($__dart_deferred_initializers__);

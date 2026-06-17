@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var A,C,E,B={
-baK(d,e,f,g){return new B.Fb(e,f,g,d,null)},
+baL(d,e,f,g){return new B.Fb(e,f,g,d,null)},
 Fb:function Fb(d,e,f,g,h){var _=this
 _.c=d
 _.e=e
@@ -22,7 +22,7 @@ bgo(d,e){var x,w=e.gQ_(),v=y.g
 w=A.ak(["name",w,"url","/"],v,v)
 x=e.ga8f()
 x=A.ak(["name",x,"url","/profile"],v,v)
-E.b7n(A.b([w,x,A.ak(["name",d,"url","/profile/"+A.fF(d.toLowerCase()," ","-")],v,v)],y.o))}},D,F
+E.b7o(A.b([w,x,A.ak(["name",d,"url","/profile/"+A.fF(d.toLowerCase()," ","-")],v,v)],y.o))}},D,F
 A=c[0]
 C=c[2]
 E=c[42]
@@ -77,7 +77,7 @@ if(w!=null)w.K(0,x.gem())
 x.bo$=null
 x.aX()}}
 B.Fa.prototype={
-f9(d){var x=A.baJ(this.a,this.b,d)
+f9(d){var x=A.baK(this.a,this.b,d)
 x.toString
 return x}}
 var z=a.updateTypes([])
@@ -105,4 +105,4 @@ w(B.Fa,A.aS)
 x(B.Sd,A.dZ)})()
 A.cM(b.typeUniverse,JSON.parse('{"Fb":{"W":[],"d":[]},"a9l":{"a_":["Fb"]},"Fa":{"aS":["dD"],"aA":["dD"],"aA.T":"dD","aS.T":"dD"}}'))
 var y={c:A.G("v<O>"),l:A.G("v<f5>"),o:A.G("v<aq<h,h>>"),g:A.G("h")};(function constants(){D.Mj=new A.dD(1,1)})()};
-(a=>{a["sZnuk+8KhitNsEy8aVpt6f3kg+s="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["U8Mh+fsBhNkby8Fg+z8POBb2GmI="]=a.current})($__dart_deferred_initializers__);
