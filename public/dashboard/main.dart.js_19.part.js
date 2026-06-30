@@ -1,11 +1,11 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var C,B,D,A={
-Ai(d,e,f,g){return new D.U(f,e,d,g)}}
+Am(d,e,f,g){return new D.U(f,e,d,g)}}
 C=c[0]
 B=c[2]
 D=c[39]
 A=a.updateHolder(c[35],A)
 var z=a.updateTypes([]);(function lazyInitializers(){var y=a.lazyFinal
-y($,"bNE","bas",()=>{var x="North America",w="Eastern Europe",v="Central America"
-return C.b([A.Ai("north-america",x,x,B.ch),A.Ai("pacific","Oceania","Oceania",B.ch),A.Ai("global","Global","Global",B.ch),A.Ai("europe",w,w,B.ch),A.Ai("asia","Asia","Asia",B.ch),A.Ai("africa","Africa","Africa",B.ch),A.Ai("south-america",v,v,B.ch)],C.G("v<U>"))})})()};
-(a=>{a["is6ppjhl4FyY28my8b0PPcXEsSM="]=a.current})($__dart_deferred_initializers__);
+y($,"bOj","baX",()=>{var x="North America",w="Eastern Europe",v="Central America"
+return C.b([A.Am("north-america",x,x,B.ch),A.Am("pacific","Oceania","Oceania",B.ch),A.Am("global","Global","Global",B.ch),A.Am("europe",w,w,B.ch),A.Am("asia","Asia","Asia",B.ch),A.Am("africa","Africa","Africa",B.ch),A.Am("south-america",v,v,B.ch)],C.I("v<U>"))})})()};
+(a=>{a["l5MsAhZ+bwr+NV0RUDkb+EZY5Rw="]=a.current})($__dart_deferred_initializers__);
